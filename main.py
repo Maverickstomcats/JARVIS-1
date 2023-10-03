@@ -7,7 +7,9 @@ def speak(audio):
     engine.runAndWait()
 
 
-def getvoices()
+def getvoices():
+    voices = engine.getProperty('voices')
+    print(voices[0].id)
 while True: 
     audio = input("enter the text to convert it into speech:  ")
     speak(audio)
