@@ -7,10 +7,19 @@ def speak(audio):
     engine.runAndWait()
 
 
-def getvoices():
+def getvoices(voice):
     voices = engine.getProperty('voices')
-    print(voices[0].id)
-while True: 
-    audio = input("enter the text to convert it into speech:  ")
-    speak(audio)
+    #print(voices[1].id)
+    if voice == 1:
+        engine.setProperty("voice",voices[0].id)
 
+    if voice == 2:
+        engine.setProperty("voice",voices[1].id)
+
+    speak("hello this is JARVIS. ")
+while True:
+    voice = int(input("Press one for a male voice, or two for a female voice.")) 
+    audio = input("enter the text to convert it into speech:  ")
+#     speak(audio)
+    
+    getvoices(voice)
